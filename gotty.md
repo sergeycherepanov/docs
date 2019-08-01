@@ -65,7 +65,7 @@ After=network.target network-online.target
 Environment="TERM=xterm"
 Environment="GOTTY_TERM=hterm"
 Environment="GOTTY_CREDENTIAL=username:password"
-ExecStart=$GOPATH/bin/gotty --config %h/.gotty --term xterm --index %h/.gotty.html /usr/bin/tmux new -A -s gotty
+ExecStart=%h/go/bin/gotty --config %h/.gotty --term xterm --index %h/.gotty.html /usr/bin/tmux new -A -s gotty
 Restart=always
 CPUShares=256
 MemoryLimit=256M
