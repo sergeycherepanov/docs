@@ -12,7 +12,7 @@ Install gotty
 go get github.com/yudai/gotty
 ```
 
-Create the index page with a Hack font support in ~/.gotty.html . 
+Create the index page with a Hack font support in ~/.gotty.html
 
 ```
 <!doctype html>
@@ -72,4 +72,11 @@ MemoryLimit=256M
 
 [Install]
 WantedBy=default.target
+```
+
+Enable service and boot at startup . 
+
+```
+systemctl --user enable gotty.service
+sudo loginctl enable-linger "$USER"
 ```
