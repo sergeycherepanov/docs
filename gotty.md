@@ -1,14 +1,16 @@
-Install gotty via brew on Ubuntu
 
-```
-brew install yudai/gotty/gotty
-```
 
-Install tmux and zsh
+Install go, tmux and zsh
 ```
-brew install tmux zsh
+brew install go tmux zsh
 ```
 
+> dont forget to configure your GOPATH
+
+Install gotty 
+```
+go get github.com/yudai/gotty
+```
 
 Create the index page with a Hack font support in ~/.gotty.html . 
 
@@ -63,7 +65,7 @@ After=network.target network-online.target
 Environment="TERM=xterm"
 Environment="GOTTY_TERM=hterm"
 Environment="GOTTY_CREDENTIAL=username:password"
-ExecStart=gotty --config %h/.gotty --term xterm --index %h/.gotty.html /usr/bin/tmux new -A -s gotty
+ExecStart=$GOPATH/bin/gotty --config %h/.gotty --term xterm --index %h/.gotty.html /usr/bin/tmux new -A -s gotty
 Restart=always
 CPUShares=256
 MemoryLimit=256M
