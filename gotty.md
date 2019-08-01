@@ -5,7 +5,7 @@ Install go, tmux and zsh
 brew install go tmux zsh
 ```
 
-> dont forget to configure your GOPATH
+> dont forget to configure your GOPATH to $HOME/go
 
 Install gotty 
 ```
